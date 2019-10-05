@@ -5,12 +5,28 @@ function fill(box) {
         game--;
         document.getElementById(box).disabled="disabled";
         winner();
+        turn();
     }
     else {
         document.getElementById(box).value= "O";
         game++;
         document.getElementById(box).disabled="disabled";
         winner();
+        turn();
+    }
+}
+function turn() {
+    if(game==1) {
+        document.getElementById("playerX").style.backgroundColor= "red";
+        document.getElementById("playerX").style.border= "4px solid black";
+        document.getElementById("playerO").style.backgroundColor= "wheat";
+        document.getElementById("playerO").style.border= "2px solid black";
+    }
+    else {
+        document.getElementById("playerO").style.backgroundColor= "red";
+        document.getElementById("playerO").style.border= "4px solid black";
+        document.getElementById("playerX").style.backgroundColor= "wheat";
+        document.getElementById("playerX").style.border= "2px solid black";
     }
 }
 function winner() {
